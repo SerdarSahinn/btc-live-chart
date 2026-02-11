@@ -15,30 +15,35 @@ Her trade gerçekleştiğinde anlık fiyat verisi alınır.
 ![BTC Live Chart Screenshot](./screenshot.png)
 
 
-✨ Özellikler
+## 🚀 Özellikler
 
-📊 Canlı güncellenen alan grafiği
-🟢 WebSocket bağlantı durumu göstergesi (LIVE / Bağlanıyor / Yeniden Bağlanıyor)
-🔄 Otomatik yeniden bağlanma (reconnect) özelliği
-📈 Oturum bazlı yüksek/düşük fiyat takibi
-🎨 Fiyat yönüne göre dinamik renk (yeşil/kırmızı)
-⚡ Performans için 1 saniyelik throttle
-🗃️ Maksimum 50 veri noktası (memory yönetimi)
+- 📊 Canlı güncellenen alan grafiği
+- 🟢 WebSocket bağlantı durumu göstergesi (LIVE / Bağlanıyor / Yeniden Bağlanıyor)
+- 🔄 Otomatik yeniden bağlanma (reconnect) özelliği
+- 📈 Oturum bazlı yüksek/düşük fiyat takibi
+- 🎨 Fiyat yönüne göre dinamik renk (yeşil/kırmızı)
+- ⚡ Performans için 1 saniyelik throttle
+- 🗃️ Maksimum 50 veri noktası (memory yönetimi)
 
 
-🏗️ Proje Yapısı
+
+## 🏗️ Proje Yapısı
+
+```bash
 src/
 ├── hooks/
-│   ├── useWebSocket.js     → Bağlantı, reconnect, status yönetimi
-│   └── usePriceData.js     → Veri işleme, throttle, High/Low hesaplama
+│   ├── useWebSocket.js      # Bağlantı, reconnect, status yönetimi
+│   └── usePriceData.js      # Veri işleme, throttle, High/Low hesaplama
 ├── components/
 │   ├── ui/
-│   │   └── chart.js        → reui.io chart bileşeni
-│   ├── PriceHeader.js      → Fiyat, % değişim, High/Low gösterimi
-│   └── LiveChart.js        → Recharts grafik bileşeni
+│   │   └── chart.js         # reui.io chart bileşeni
+│   ├── PriceHeader.js       # Fiyat, % değişim, High/Low gösterimi
+│   └── LiveChart.js         # Recharts grafik bileşeni
 ├── lib/
-│   └── utils.js            → Yardımcı fonksiyonlar
-└── App.js                  → Ana bileşen
+│   └── utils.js             # Yardımcı fonksiyonlar
+└── App.js                   # Ana bileşen
+```
+
 
 
 ⚙️ Kurulum
