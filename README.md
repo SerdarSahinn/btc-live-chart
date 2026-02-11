@@ -60,6 +60,3 @@ npm install
 
 # Uygulamayı başlat
 npm start
-
-📦 Build
-npm run build
