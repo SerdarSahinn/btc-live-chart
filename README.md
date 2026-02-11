@@ -1,14 +1,15 @@
-Copy
 
-📈 BTC/USDT Canlı Grafik Uygulaması
-Binance borsasından WebSocket ile canlı BTC/USDT fiyat verisini çeken ve gerçek zamanlı güncellenen grafik uygulaması.
 
-🚀 Canlı Demo
+# 📈 BTC/USDT Canlı Grafik Uygulaması
+
+Bu proje, Binance borsasından **WebSocket** aracılığıyla canlı BTC/USDT fiyat verilerini çeken ve gerçek zamanlı olarak güncellenen bir grafik uygulamasıdır.  
+
+## 🚀 Canlı Demo
 btc-live-chart.vercel.app
 
- WebSocket Bağlantısı
-wss://stream.binance.com:9443/ws/btcusdt@trade
-Her trade gerçekleştiğinde anlık fiyat verisi alınır.
+## 🔗 WebSocket Bağlantısı
+- Endpoint: `wss://stream.binance.com:9443/ws/btcusdt@trade`
+- Her trade gerçekleştiğinde anlık fiyat verisi alınır ve grafik otomatik olarak güncellenir.
 
 📸 Ekran Görüntüsü
 
