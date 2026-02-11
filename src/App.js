@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useWebSocket } from "./hooks/useWebSocket";
+import { usePriceData } from "./hooks/usePriceData";
+import { PriceHeader } from "./components/PriceHeader";
+import { LiveChart } from "./components/LiveChart";
 
 function App() {
+  const { data, lastPrice, changePercent, isUp, high, low, handleMessage } = usePriceData();
+  const { status } = useWebSocket(handleMessage);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full min-h-screen bg-slate-900 p-6">
+      <PriceHeader
+        lastPrice={lastPrice}
+        changePercent={changePercent}
+        isUp={isUp}
+        status={status}
+        high={high}
+        low={low}
+      />
+      <LiveChart data={data} isUp={isUp} />
     </div>
   );
 }
