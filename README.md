@@ -5,7 +5,7 @@
 Bu proje, Binance borsasından **WebSocket** aracılığıyla canlı BTC/USDT fiyat verilerini çeken ve gerçek zamanlı olarak güncellenen bir grafik uygulamasıdır.  
 
 ## 🚀 Canlı Demo
-btc-live-chart.vercel.app
+btc-live-chart-oxfo.vercel.app
 
 ## 🔗 WebSocket Bağlantısı
 - Endpoint: `wss://stream.binance.com:9443/ws/btcusdt@trade`
