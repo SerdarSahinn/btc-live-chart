@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 const WS_URL = "wss://stream.binance.com:9443/ws/btcusdt@trade";
 const RECONNECT_DELAY = 3000;
@@ -8,29 +8,23 @@ export function useWebSocket(onMessage) {
   const reconnectTimer = useRef(null);
   const [status, setStatus] = useState("connecting");
 
-  const connect = () => {
+  const connect = useCallback(() => {
     ws.current = new WebSocket(WS_URL);
 
-    ws.current.onopen = () => {
-      setStatus("connected");
-    };
+    ws.current.onopen = () => setStatus("connected");
 
     ws.current.onmessage = (event) => {
       const message = JSON.parse(event.data);
       onMessage(message);
     };
 
-    ws.current.onerror = () => {
-      setStatus("disconnected");
-    };
+    ws.current.onerror = () => setStatus("disconnected");
 
     ws.current.onclose = () => {
       setStatus("reconnecting");
-      reconnectTimer.current = setTimeout(() => {
-        connect();
-      }, RECONNECT_DELAY);
+      reconnectTimer.current = setTimeout(connect, RECONNECT_DELAY);
     };
-  };
+  }, [onMessage]);
 
   useEffect(() => {
     connect();
@@ -38,7 +32,7 @@ export function useWebSocket(onMessage) {
       clearTimeout(reconnectTimer.current);
       ws.current?.close();
     };
-  }, []);
+  }, [connect]);
 
   return { status };
 }
