@@ -25,6 +25,7 @@ Her trade gerçekleştiğinde anlık fiyat verisi alınır.
 ⚡ Performans için 1 saniyelik throttle
 🗃️ Maksimum 50 veri noktası (memory yönetimi)
 
+
 🏗️ Proje Yapısı
 src/
 ├── hooks/
